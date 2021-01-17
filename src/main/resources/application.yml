@@ -1,0 +1,39 @@
+server:
+  port: 8010
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+
+logging:
+  level:
+    root: info
+    org.hibernate: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+
+## 开启Actuator的health的详细信息展示
+management:
+  security:
+    enabled: false
+
+## 开启Actuator的info的详细信息展示
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+## 开启Actuator的shutdown(关闭应用)
+endpoints:
+  shutdown:
+    enabled: false
+
