@@ -1,6 +1,8 @@
 server:
   port: 8010
 spring:
+  application:
+    name: micorservice-simple-provider-user
   jpa:
     generate-ddl: false
     show-sql: true
@@ -10,6 +12,7 @@ spring:
     platform: h2
     schema: classpath:schema.sql
     data: classpath:data.sql
+
 
 logging:
   level:
@@ -37,3 +40,11 @@ endpoints:
   shutdown:
     enabled: false
 
+# 注册到eureka中
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:                 # true 注册ip false 或者不填 则为hostname
+    prefer-ip-address: true #将自己的ip注册到eureka server 若不配置或为false 则表示注册微服务所在操作系统的hostname到eureka server

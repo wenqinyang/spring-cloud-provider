@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 1.0
  * @date 2021/1/17 19:07
  */
+
 @SpringBootApplication
 public class ProviderUserApplication {
   public static void main(String[] args) {
