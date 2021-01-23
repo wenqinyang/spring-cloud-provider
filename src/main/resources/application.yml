@@ -45,6 +45,6 @@ endpoints:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
   instance:                 # true 注册ip false 或者不填 则为hostname
     prefer-ip-address: true #将自己的ip注册到eureka server 若不配置或为false 则表示注册微服务所在操作系统的hostname到eureka server
